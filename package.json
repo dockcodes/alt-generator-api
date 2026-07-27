@@ -1,0 +1,28 @@
+{
+  "name": "@dockcodes/alt-generator-api",
+  "version": "0.0.0",
+  "description": "Dockcodes alt generator api.",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "tsup",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "author": "Jacek Sultan <j.sultan@dock.codes>",
+  "devDependencies": {
+    "@types/node": "^24.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "tsup": "^8.0",
+    "typescript": "^5.0"
+  },
+  "dependencies": {
+    "@dockcodes/fetcher": "^0.0.1"
+  }
+}
