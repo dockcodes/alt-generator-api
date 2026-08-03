@@ -23,6 +23,6 @@
     "typescript": "^5.0"
   },
   "dependencies": {
-    "@dockcodes/fetcher": "^0.0.1"
+    "@dockcodes/fetcher": "^0.0.2"
   }
 }
