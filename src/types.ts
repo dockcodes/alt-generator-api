@@ -17,12 +17,12 @@ type GenerateBody = {
     file: string;
 };
 type GenerateParams = {
-    context: string;
-    lang: GeneratorLanguage;
+    context?: string;
+    lang?: GeneratorLanguage;
     recaptcha_token?: string;
     set_uuid?: string;
-    tone: GeneratorTone;
-    variants: GeneratorVariants;
+    tone?: GeneratorTone;
+    variants?: GeneratorVariants;
 };
 type GenerateResponse = {
     data: {
@@ -66,7 +66,7 @@ type GetImageSetImagesResponse = {
         alts: { id: number; alt: string; locale: 'en'; created_at: string }[];
         created_at: string;
     }[];
-    paginate: {
+    pagination: {
         page: number;
         per_page: number;
         total_items: number;
