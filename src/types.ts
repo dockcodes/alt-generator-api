@@ -102,7 +102,7 @@ export type {
     GetImageSetImagesResponse,
     GetImageSetParams,
     GetImageSetResponse,
-    UpdateImageSetVisbilityBody,
+    UpdateImageSetVisbilityBody as UpdateImageSetVisbilityParams,
     UpdateImageSetVisbilityResponse,
     GetUserResponse,
 };

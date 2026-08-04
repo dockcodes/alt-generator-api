@@ -1,27 +1,27 @@
 import type { ApiClient, RequestOptions } from '@dockcodes/fetcher';
 import type {
-  GenerateBody,
-  GenerateParams,
-  GenerateResponse,
-  GetImageParams,
-  GetImageSetImagesParams,
-  GetImageSetImagesResponse,
-  GetImageSetParams,
-  GetImageSetResponse,
-  GetUserResponse,
-  LoginBody,
-  LoginResponse,
-  UpdateImageSetVisbilityBody,
-  UpdateImageSetVisbilityResponse
+    GenerateBody,
+    GenerateParams,
+    GenerateResponse,
+    GetImageParams,
+    GetImageSetImagesParams,
+    GetImageSetImagesResponse,
+    GetImageSetParams,
+    GetImageSetResponse,
+    GetUserResponse,
+    LoginBody,
+    LoginResponse,
+    UpdateImageSetVisbilityParams,
+    UpdateImageSetVisbilityResponse,
 } from './types';
 
 function altGeneratorApi(client: ApiClient) {
     return {
-        login(body: LoginBody, options?: RequestOptions) {
-            return client.POST<LoginResponse>('/token', body, options);
+        login(body: FormData | LoginBody, options?: RequestOptions) {
+            return client.POST<LoginResponse>('/token', body, undefined, options);
         },
-        generate(body: GenerateBody & GenerateParams, options?: RequestOptions) {
-            return client.POST<GenerateResponse>('/generate', body, options);
+        generate(body: FormData | GenerateBody, params: GenerateParams, options?: RequestOptions) {
+            return client.POST<GenerateResponse>('/generate', body, params, options);
         },
         getImagePath(params: GetImageParams) {
             return client.url('/image/:image_uuid', params);
@@ -32,8 +32,8 @@ function altGeneratorApi(client: ApiClient) {
         getImageSetImages(params: GetImageSetImagesParams, options?: RequestOptions) {
             return client.GET<GetImageSetImagesResponse>('/image-set/:image_set_uuid/images', params, options);
         },
-        updateImageSetVisiblity(body: UpdateImageSetVisbilityBody, options?: RequestOptions) {
-            return client.PATCH<UpdateImageSetVisbilityResponse>('/image-set/{id}/visibility', body, options);
+        updateImageSetVisiblity(params: UpdateImageSetVisbilityParams, options?: RequestOptions) {
+            return client.PATCH<UpdateImageSetVisbilityResponse>('/image-set/{image_set_uuid}/visibility', undefined, params, options);
         },
         getUser(options?: RequestOptions) {
             return client.GET<GetUserResponse>('/user', undefined, options);
