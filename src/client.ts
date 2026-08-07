@@ -33,7 +33,7 @@ function altGeneratorApi(client: ApiClient) {
             return client.GET<GetImageSetImagesResponse>('/image-set/:image_set_uuid/images', params, options);
         },
         updateImageSetVisiblity(params: UpdateImageSetVisbilityParams, options?: RequestOptions) {
-            return client.PATCH<UpdateImageSetVisbilityResponse>('/image-set/{image_set_uuid}/visibility', undefined, params, options);
+            return client.PATCH<UpdateImageSetVisbilityResponse>('/image-set/:image_set_uuid/visibility', undefined, params, options);
         },
         getUser(options?: RequestOptions) {
             return client.GET<GetUserResponse>('/user', undefined, options);
